@@ -24,13 +24,13 @@ if (quizResponseTwo.toUpperCase() === 'Y' || quizResponseTwo.toUpperCase() === '
   console.log('You were right! I rather sleep.');
 }
 
-var quizResponseThree = prompt('Does Kayla like the color Aqua?');
+var quizResponseThree = prompt('Am I addicted to candy cane chapstick?');
 
 if (quizResponseThree.toUpperCase() === 'Y' || quizResponseThree.toUpperCase() === 'YES') {
-  console.log('You are correct!');
+  console.log('I am. I really am...');
 }
 else {
-  console.log('Well I do, so you are wrong.');
+  console.log('Well I am, so you are wrong.');
 }
 
 var quizResponseFour = prompt('Can I leg press 450 lbs?');
