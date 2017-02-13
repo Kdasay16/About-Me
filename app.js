@@ -19,7 +19,7 @@ function allQuestions () {
   } else if(quizResponseOne.toUpperCase() === 'N' || quizResponseOne.toUpperCase() === 'NO') {
     console.log('Yay you were right!');
   } else {
-    console.log('Please respond with a \'Y\' or \'N\'');
+    alert('Please respond with a \'Y\' or \'N\'');
   }
 
   //Question 2
@@ -83,5 +83,39 @@ for (var i = 0; i < numAttempts; i++) {
   }
   if (i === 2) {
     alert('You are out of tries! Better luck next time!');
+  }
+}
+
+//Question 7
+if (questionCount === 6) {
+  alert('Bonus question! You get six tries. What other states have I lived in?');
+  allStates();
+}
+function allStates() {
+  var statesLivedIn = ['Nevada', 'Idaho', 'Tennessee', 'Kentucky', 'Wyoming', 'Virgina', 'South Carolina'];
+  var stateGuessesLeft = 5;
+  var numGuesses = 6;
+  var statesComplete = false;
+
+  for (var statesCount = 0; statesCount < numGuesses; statesCount++) {
+    var statesQuestion = prompt('Kayla has lived in: ');
+    for (i = 0, i < statesLivedIn.length; i++) {
+      if (statesQuestion.toUpperCase() === statesLivedIn[i].toUpperCase()) {
+        statesComplete = true;
+        statesLivedIn.splice(i, 1);
+        alert('You guessed correctly! She has also lived in ' + statesLivedIn.join(', ') + '.');
+        document.write('<p>You got both bonus questions correct!</p>');
+        break;
+      }
+    }
+    if (statesComplete === true) {
+      break;
+    } else {
+      alert('She has never lived there. You have ' + stateGuessesLeft-- + 'guesses remaining.');
+      if (statesCount === numGuesses - 1) {
+        alert('You are out of guesses. She has lived in ' + statesLivedIn.join(', ') + '.');
+        document.write('<p>You got one bonus question right!</p>');
+      }
+    }
   }
 }
